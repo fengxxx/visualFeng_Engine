@@ -1,0 +1,22 @@
+---VisualFeng---vision_1.0
+	engine_c_1
+		1.use c programming language
+		2.use openGL
+		GUI. gtk
+	engine_python_1
+
+		1.use python programming language(python2.7)
+		2.use openGL
+		3.GUI. pyQt4	(pygtk2.24)	
+		4.cx_Freeze		E:\visualFengx>python setup.py build
+		
+		
+---VisualFeng---vision_1.1
+	engine_python
+		
+		focue on 
+		0.keyboat contol in python
+		1.basic control and import obj flie and light
+
+
+	
