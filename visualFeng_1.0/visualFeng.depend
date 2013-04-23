@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1366557624 source:e:\desktop\opengl_s\visualfeng\main.c
+	<windows.h>
+	<gl/gl.h>
+	<gl/glut.h>
+	<GL/glaux.h>
+
+1366552235 source:e:\desktop\opengl_s\visualfeng\temp.c
+
+1366697959 source:c:\users\fengx\desktop\codeblock\main.c
+	<windows.h>
+	<gl/gl.h>
+	<gl/glut.h>
+
+1366695914 source:c:\users\fengx\desktop\codeblock\temp.c
+
