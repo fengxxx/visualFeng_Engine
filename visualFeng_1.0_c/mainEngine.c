@@ -1,3 +1,4 @@
+
 #include <windows.h>
 #include <gl/gl.h>
 #include <gl/glut.h>
@@ -107,20 +108,29 @@ int WINAPI WinMain(HINSTANCE hInstance,
             glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);
             glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);
             glLightModelfv(GL_LIGHT_MODEL_AMBIENT, Light_Model_Ambient);
+
+
             glEnable(GL_LIGHT1);
             glEnable(GL_LIGHTING);
             glEnable(GL_COLOR_MATERIAL);
             //-----------------------light
 
-            glFrustum(-0.1,0.1,-0.1,0.1,0.15,900);
-            gluLookAt(1,1,1,0,0.0,0.0,0.0,0,1);
+            //gluLookAt(1,1,1,0,0.0,0.0,0.0,0,1);
+            //glFrustum(-0.1,0.1,-0.1,0.1,0.15,900);
+            //glMatrixMode(GL_MODELVIEW);
+
+
+            //glClearDepth(1.0f);
+            //glEnable(GL_DEPTH_TEST);
             GLfloat fogColor [4]={0,0.2,0.99,1};
             glEnable(GL_FOG);
             glFogfv(GL_FOG_COLOR,fogColor);
 
+
             //------------------------------draw model
             glPushMatrix();
             glRotated(40,0,1,0);
+            //  glutSolidCube(1.0f);
             glBegin(GL_QUADS);
                 glColor3f(0.5f,0.5f,0.5f);
                 glVertex2f( -0.5f,-0.5f);
@@ -130,8 +140,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
                 glVertex2f(0.5f,0.5f);
                 //glColor3f(0.2f,0.0f,0.2f);
                 glVertex2f( -0.5f,0.5f);
+
             glEnd();
+            //glRotated(40,0,0,1);
             glRotated(80,1,0,0);
+            //glutSolidSphere(1.0,40,40);
             glBegin(GL_QUADS);
                 glColor3f(0.5f,0.5f,0.5f);
                 glVertex2f( -0.5f,-0.5f);
@@ -144,9 +157,38 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
             glEnd();
             glPopMatrix();
+            //glPushMatrix();
+
+            //glRotated(40,1,0,0);
+            //glRotated(40,0,0,1);
+
             grid(1);
-            xyz(50);
+            //xyz grid
+            int xyzL=10;
+            glBegin(GL_LINES);
+            glColor3f(0.0f, 0.0f, 1.0f);
+            glVertex3f(0.0f, 0.0f, -xyzL);
+            glColor3f(0.0f, 1.0f, 0.0f);
+            glVertex3f(0.0f, 0.0f, xyzL);
+            glColor3f(0.0f, 1.0f, 0.0f);
+            glVertex3f(xyzL, 0.0f, 0.0f);
+            glColor3f(1.0f, 0.0f, 0.0f);
+            glVertex3f(-xyzL, 0.0f, 0.0f);
+            glColor3f(1.0f, 0.0f, 0.0f);
+            glVertex3f(0.0f, -xyzL, 0.0f);
+            glColor3f(0.0f, 0.0f, 1.0f);
+            glVertex3f(0.0f, xyzL, 0.0f);
+            glEnd();
+            //grid(0);
+
+            //glPopMatrix();
+
+            //glFlush();
             //------------------------------draw model
+
+
+
+
             SwapBuffers(hDC);
             // printf("opengl li  %d\n",fengx);
             theta += 1.0f;
@@ -173,11 +215,13 @@ void grid(float h){
     int i;
     for(ix=0;ix<21;ix++){
         for(i=0;i<21;i++){
+            //net grid
             glColor3f(0.5f, 0.5f, 0.5f);
             glVertex3f(-0.8f, (float)i * 0.08f - 0.8f,h);
             glVertex3f(0.8f, (float)i * 0.08f - 0.8f, h);
             glVertex3f((float)i * 0.08f - 0.8, 0.8f, h);
             glVertex3f((float)i * 0.08f - 0.8, -0.8f, h);
+            //XYZ   grid
         }
     }
     glEnd();
@@ -308,5 +352,4 @@ void DisableOpenGL (HWND hwnd, HDC hDC, HGLRC hRC)
     wglDeleteContext(hRC);
     ReleaseDC(hwnd, hDC);
 }
-
 

@@ -1,1 +1,0 @@
-INDEX VERSION 1.126+E:\visualFeng_Engine\visualFengx_1.0_c_eclipse\.metadata\.plugins\org.eclipse.jdt.core
