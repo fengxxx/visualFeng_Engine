@@ -36,10 +36,7 @@
 			<Add library="glu32" />
 			<Add library="gdi32" />
 		</Linker>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="temp.c">
+		<Unit filename="mainEngine.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

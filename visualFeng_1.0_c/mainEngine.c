@@ -1,8 +1,10 @@
 
 #include <windows.h>
-#include <gl/gl.h>
-#include <gl/glut.h>
-//#include <GL/glaux.h>
+
+#include <Gl/gl.h>
+#include <GL/glut.h>
+
+
 
 float fengx=0;
 LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
@@ -115,8 +117,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
             glEnable(GL_COLOR_MATERIAL);
             //-----------------------light
 
-            //gluLookAt(1,1,1,0,0.0,0.0,0.0,0,1);
-            //glFrustum(-0.1,0.1,-0.1,0.1,0.15,900);
+            //gluLookAt(10,10,10,0,0,0,0,0,1);
+            //glFrustum(-1,1,-1,1,1,900);
             //glMatrixMode(GL_MODELVIEW);
 
 
@@ -127,10 +129,10 @@ int WINAPI WinMain(HINSTANCE hInstance,
             glFogfv(GL_FOG_COLOR,fogColor);
 
 
-            //------------------------------draw model
+//            //------------------------------draw model
             glPushMatrix();
             glRotated(40,0,1,0);
-            //  glutSolidCube(1.0f);
+            //glutSolidCube(1.0f);
             glBegin(GL_QUADS);
                 glColor3f(0.5f,0.5f,0.5f);
                 glVertex2f( -0.5f,-0.5f);
@@ -212,7 +214,7 @@ void grid(float h){
 
     glBegin(GL_LINES);
     int ix;
-    int i;
+    int  i;
     for(ix=0;ix<21;ix++){
         for(i=0;i<21;i++){
             //net grid
