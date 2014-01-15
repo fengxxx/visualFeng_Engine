@@ -8,6 +8,9 @@ import os
 from PyQt4 import QtCore, QtGui
 import mainEngine
 import settings
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from OpenGL.GLUT import *
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         #------------------------------------------
@@ -15,16 +18,14 @@ class MainWindow(QtGui.QMainWindow):
         centralWidget = QtGui.QWidget()
         self.setCentralWidget(centralWidget)
         # gui
-        self.frontSize=15
+        self.frontSize=10
         #-------------------------------------------------------main scene
         # place some public variable
         # load some map
         mainBG = QtGui.QPixmap(self)
         mainBG.load('UI/M_mainBG.png')
         menuOn = True
-        
         settings.setting()
-        
         # initialize widget
         #---main windows
         self.mainWidget = mainEngine.GLWidget()

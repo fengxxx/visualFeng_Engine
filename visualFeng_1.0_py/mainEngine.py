@@ -9,8 +9,6 @@ xd = 0.24
 yd = 0.008
 gridN = 60
 
-
-
 try:
     from OpenGL import GL
 except ImportError:
