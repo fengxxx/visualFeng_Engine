@@ -224,7 +224,7 @@ class MainWindow(QtGui.QMainWindow):
             self.mainWidget.yRot=0
             self.mainWidget.xRot=0
             self.mainWidget.updateGL()
-            
+     
 if __name__ == '__main__':
 
     app = QtGui.QApplication(sys.argv)

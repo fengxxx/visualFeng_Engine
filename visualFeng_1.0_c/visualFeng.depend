@@ -14,9 +14,8 @@
 
 1366695914 source:c:\users\fengx\desktop\codeblock\temp.c
 
-1389590899 source:e:\github\visualfeng_engine\visualfeng_1.0_c\mainengine.c
+1389591623 source:e:\github\visualfeng_engine\visualfeng_1.0_c\mainengine.c
 	<windows.h>
-	<GL/glew.h>
 	<Gl/gl.h>
 	<GL/glut.h>
 
